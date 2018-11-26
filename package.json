@@ -1,0 +1,29 @@
+{
+  "name": "turbo-potato",
+  "version": "0.0.1",
+  "description": "A minimal web frontend for youtube-dl",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heyjuststart/turbo-potato.git"
+  },
+  "keywords": [
+    "nodejs",
+    "youtube-dl",
+    "frontend"
+  ],
+  "author": "heyjuststart",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/heyjuststart/turbo-potato/issues"
+  },
+  "homepage": "https://github.com/heyjuststart/turbo-potato#readme"
+}
