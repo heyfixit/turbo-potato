@@ -23,7 +23,7 @@ app.use(customAuthMiddleware);
 
 app.use(userController);
 
-db.sequelize.sync({ force: true }).then(() => {
+db.sequelize.sync({ force: development }).then(() => {
   const { User } = db;
   User.create({ username: 'test', password: 'test' });
   app.listen(PORT, () => console.log(`API listening on port ${PORT}!`));
