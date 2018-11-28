@@ -1,2 +1,2 @@
 # turbo-potato
-A minimal web frontend for youtube-dl.
+A minimal web frontend for youtube.
