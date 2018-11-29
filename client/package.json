@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^3.6.0",
+    "@mdi/react": "^1.1.0",
     "connected-react-router": "^5.0.1",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
@@ -10,10 +12,11 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.1",
     "redux": "^4.0.1",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "typeface-roboto": "0.0.54"
   },
   "scripts": {
-    "start": "NODE_PATH=src react-scripts start",
+    "start": "NODE_PATH=src/ react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
