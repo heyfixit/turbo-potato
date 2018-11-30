@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const requireAuth = require('../middleware/require-auth-middleware');
 
 const { User } = require('../models');
 
@@ -44,11 +45,8 @@ router.delete('/logout', async (req, res) => {
 });
 
 // Get current user
-router.get('/me', (req, res) => {
-  if (req.user) {
-    return res.send(req.user);
-  }
-  res.status(404).send({ errors: [{ message: 'missing auth token' }]});
+router.get('/me', requireAuth, (req, res) => {
+  res.send(req.user);
 });
 
 module.exports = router;
