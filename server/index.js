@@ -17,14 +17,20 @@ if (development) {
   app.use(morgan('dev'));
 }
 
+// formal middleware
 app.use(urlencoded({ extended: true }));
 app.use(json());
 app.use(cookieParser());
-app.use(customAuthMiddleware);
-app.use(experimentController);
+app.use(bodyParser());
 
+// simple token auth middleware
+app.use(customAuthMiddleware);
+
+// controllers
+app.use(experimentController);
 app.use(userController);
 
+// if in development, drop db with each restart and create a new user
 sequelize.sync({ force: development }).then(() => {
   const { User } = db;
   User.create({ username: 'test', password: 'test' });
