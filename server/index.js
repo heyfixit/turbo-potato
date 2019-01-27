@@ -8,6 +8,7 @@ const app = express();
 const morgan = require('morgan');
 
 const userController = require('./controllers/user-controller');
+const experimentController = require('./controllers/experiment-controller');
 
 const PORT = process.env.PORT || 3000;
 const development = process.env.NODE_ENV !== 'production';
@@ -16,10 +17,11 @@ if (development) {
   app.use(morgan('dev'));
 }
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 app.use(cookieParser());
 app.use(customAuthMiddleware);
+app.use(experimentController);
 
 app.use(userController);
 
