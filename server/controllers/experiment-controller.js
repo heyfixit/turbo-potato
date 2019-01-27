@@ -1,6 +1,6 @@
-const express = require('express');
-const router = express.Router();
-const { spawn } = require('child_process');
+import { Router } from 'express';
+import { spawn } from 'child_process';
+const router = Router();
 
 // Piping youtube-dl straight to response as an mp4
 router.get('/test_pipe', (_req, res) => {
@@ -11,4 +11,4 @@ router.get('/test_pipe', (_req, res) => {
   ydl.stdout.pipe(res);
 });
 
-module.exports = router;
+export default router;

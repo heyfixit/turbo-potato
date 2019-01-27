@@ -1,8 +1,8 @@
-const express = require('express');
-const router = express.Router();
-const requireAuth = require('../middleware/require-auth-middleware');
+import { Router } from 'express';
+import requireAuth from '../middleware/require-auth-middleware';
 
-const { User } = require('../models');
+import { User } from '../models';
+const router = Router();
 
 // Register new users
 router.post('/register', async (req, res) => {
@@ -49,5 +49,5 @@ router.get('/me', requireAuth, (req, res) => {
   res.send(req.user);
 });
 
-module.exports = router;
+export default router;
 
