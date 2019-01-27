@@ -51,7 +51,7 @@ module.exports = (sequelize, DataTypes) => {
     await user.addAuthToken(authToken);
 
     // Filter the password
-    return { user: { ...user.get({ plain: true }), password: undefined }, authToken };
+    return { user: { ...( user.get({ plain: true }) ), password: undefined }, authToken };
   };
 
   User.prototype.logout = async function(token) {
